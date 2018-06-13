@@ -9,7 +9,7 @@ module.exports = function(context, cb) {
   theurl += '&API=' + context.secrets.MAP_API;
   console.log(theurl);
   fetchit(theurl)
-  .then(  res => res.json()).then(data => {
-    cb(null, data);
-  });
+  .then(  res => res.json())
+  .then(data => { cb(null, data);})
+  .catch((error) => console.error(error));
 };
