@@ -1,5 +1,6 @@
 /**
 * @param context {WebtaskContext}
+* ?latlng=39.559539,-104.777031
 */
 var fetchit = require('node-fetch');
 module.exports = function(context, cb) {
