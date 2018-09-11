@@ -19,7 +19,7 @@ module.exports = function(context, cb) {
 axios.get(theurl)
   .then(function (response) {
     console.dir(response.data.results[0]);
-    cb(null, data)
+    cb(null, response.data.results[0])
   })
   .catch(function (error) {
     console.log('error' + error);
