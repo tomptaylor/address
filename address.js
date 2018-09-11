@@ -22,6 +22,8 @@ axios.get(theurl)
     cb(null, data)
   })
   .catch(function (error) {
-    console.log(error);
+    console.log('error' + error);
+    cb(error, null)
+
   });
 };
