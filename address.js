@@ -1,6 +1,8 @@
 /**
 * @param context {WebtaskContext}
 * ?latlng=39.559539,-104.777031
+* ?lnglat=-104.777031,39.559539
+
 */
 var fetchit = require('node-fetch');
 //var axios = require('axios');
@@ -8,6 +10,7 @@ var fetchit = require('node-fetch');
 module.exports = function(context, cb) {
   console.log(context.query);
   var theurl = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=';
+theurl = 'http://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/reverseGeocode?f=pjson&featureTypes=&location='
   theurl += context.query.latlng;
   theurl += '&API=' + context.secrets.MAP_API;
   console.log(theurl);
