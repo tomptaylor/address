@@ -9,9 +9,10 @@ var fetchit = require('node-fetch');
 
 module.exports = function(context, cb) {
   console.log(context.body_raw);
+  var loc = JSON.parse(context.body_raw);
   var theurl = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=';
 theurl = 'http://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/reverseGeocode?f=pjson&featureTypes=&'
-  theurl += context.body_raw.location;
+  theurl += loc.location;
 //  theurl += '&API=' + context.secrets.MAP_API;
   console.log(theurl);
  fetchit(theurl)
