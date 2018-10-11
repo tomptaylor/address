@@ -11,7 +11,7 @@ module.exports = function(context, cb) {
   console.log(context.query);
   var theurl = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=';
 theurl = 'http://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/reverseGeocode?f=pjson&featureTypes=&'
-  theurl += context.query.latlng;
+  theurl += context.query.location;
 //  theurl += '&API=' + context.secrets.MAP_API;
   console.log(theurl);
  fetchit(theurl)
